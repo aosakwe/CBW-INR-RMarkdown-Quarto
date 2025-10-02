@@ -11,7 +11,7 @@ This report aims to provide core summary statistics for breast cancer patient da
 
 ## Load Libraries
 
-```{r, message=FALSE,warning=FALSE}
+```{r}
 library(tidyverse)
 
 #QUESTION: why would we set message and warning to false here?
@@ -30,11 +30,19 @@ meta_df <- readRDS('./meta.rds')
 meta_df
 ```
 
+## Brief Inspection of Dataset
+
+```{r}
+## Run the head() function on the df object to see the first 6 rows
+##try using the %>% operator
+```
+
 ## Summary Statistics
 
 ```{r}
-#TODO Create a data frame storing the summary statistics for each column in df
-
+#TODO Create a data frame storing the mean and media for Cell.Size and Cell.Shape
+# Separate samples by Class
+##Hint:  we need to use the group_by and summarize functions!
 
 
 
@@ -55,7 +63,8 @@ ggplot(df,aes(x = Cell.size,
               y = Cell.shape)) +
   geom_point()
 ## TODO Update the function to color by sample Class!
-## Update the labels and add a title (hint: labs())
+#Hint: 
+## Update the plot to include labels and add a title (hint: aes(color = ?,..), ?labs)
 ```
 
 ```{r}
@@ -66,8 +75,8 @@ ggplot(df, aes(y = Cell.size)) +
 
 ```{r}
 ## TODO
-# Recreate the previous plots but visualize malignant and benign samples separately so that they can be compared
-
+# Recreate the previous plot but visualize malignant and benign samples separately so that they can be compared
+##hint aes(x =?,....)
 ```
 
 ## Linear Classification
@@ -77,7 +86,7 @@ ggplot(df, aes(y = Cell.size)) +
 
 
 #hint ?glm and ?predict.glm
-
+#additional hint: see the example in the Example report we saw earlier
 ```
 
 ```{r}
