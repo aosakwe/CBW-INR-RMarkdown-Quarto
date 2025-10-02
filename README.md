@@ -4,7 +4,6 @@
 
 This repository contains all of the materials for the CBW Intro to R Module on RMarkdown and Quarto. 
 The module introduces participants to the RMarkdown and Quarto document structures and their different use cases. Participants will gain experience using notebooks to generate automated analysis reports and compile their notebooks as webpages.
-## Requirements & Installation
 
 ## Requirements & Installation
 
@@ -19,6 +18,7 @@ The module introduces participants to the RMarkdown and Quarto document structur
 3) Developing automated reports
 4) Webpage for documentation
 5) Closing Remarks
+
 
 
 
