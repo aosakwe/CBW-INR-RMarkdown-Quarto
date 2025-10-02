@@ -47,6 +47,7 @@ mini_iris$Pred <- ifelse(mini_iris$Prob >= 0.5,"virginica", "setosa")
 mini_iris$Result <- mini_iris$Species == mini_iris$Pred
 
 
+## Visualizing Sepal dimensions by species
 ggplot(mini_iris, aes(x = Sepal.Length, y = Sepal.Width, color = Pred)) +
   geom_point(size = 3, alpha = 0.7) +  # Add points with some transparency
   theme_minimal() +  # Use a clean theme

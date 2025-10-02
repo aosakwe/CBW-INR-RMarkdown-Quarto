@@ -82,11 +82,8 @@ table(mini_iris$Result)
 ## Model Visualization
 
 ```{r}
-
-
 ##Question: Can you add an additional plot that shows the TRUE species labels?
-#Hint: what was the name of the column storing the labels?
-
+#Hint: what was the name of the column storing the labels? What argument is being used to visualize the Predicted labels?
 ggplot(mini_iris, aes(x = Sepal.Length, y = Sepal.Width, color = Pred)) +
   geom_point(size = 3, alpha = 0.7) +  # Add points with some transparency
   theme_minimal() +  # Use a clean theme
@@ -96,8 +93,8 @@ ggplot(mini_iris, aes(x = Sepal.Length, y = Sepal.Width, color = Pred)) +
     y = "Sepal Width"
   )
 
-
-mini_iris$Num_Species <- ifelse(mini_iris$Species == 'setosa', 0,1)
+## Running a linear regression to compare to logistic regression
+mini_iris$Num_Species <- ifelse(mini_iris$Species == 'setosa', 1,2)
 iris.lm <- lm(Num_Species ~ Sepal.Length +  Sepal.Width,
               data = mini_iris)
 
@@ -112,12 +109,15 @@ summary(mini_iris$Prob)
 
 ### Feature selection and additional modelling
 
-Exploring optimal features to compare viridis and vesicolor species.
+Exploring optimal features to compare viridis and versicolor species.
 
 ```{r}
 
 mini_iris <- iris %>%
   filter(Species != 'setosa')
+
+##Question:can you change the plot to show Petal length and width?
+##hint: aes(x = ?, y = ?)
 ggplot(mini_iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   geom_point(size = 3, alpha = 0.7) +  # Add points with some transparency
   theme_minimal() +  # Use a clean theme
